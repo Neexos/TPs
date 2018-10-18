@@ -1,3 +1,3 @@
 **CONTRIBUTORS**
- * MEYNET LÈo
- * personne ne veut changer de binÙme et nous sommes un nombre impaire, j'ai donc rÈaliser le TP seul
+ * MEYNET L√©o
+ * personne ne veut changer de bin√¥me et nous sommes un nombre impaire, j'ai donc r√©alis√© le TP seul
