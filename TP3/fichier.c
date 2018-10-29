@@ -13,6 +13,7 @@ int main(int argc, char **argv){ //passer le nom de fichier a lire ou modifier e
         
         printf("selectionnez l'option:\n1.Lire le fichier\n2.Ecrire dans le fichier\n");
         scanf("%d", &c);
+        fflush(stdin);
                 
         switch (c){
             
@@ -23,7 +24,8 @@ int main(int argc, char **argv){ //passer le nom de fichier a lire ou modifier e
             case 2:
                 
                 printf("entrez le mot à écrire dans le fichier:\n");
-                fgets(phrase, 80, stdin);
+                getchar();
+                fgets(phrase, 100, stdin);
                 ecrire_dans_fichier(argv[1],phrase);
                 break;
             

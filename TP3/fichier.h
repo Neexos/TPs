@@ -25,7 +25,7 @@ char lire_fichier(char *filename){
 char ecrire_dans_fichier(char *filename, char *message){
     int fd,size;
     
-    fd = open(filename, O_CREAT|O_WRONLY);
-    size = write(fd, message, sizeof(message));
+    fd = open(filename, O_CREAT|O_WRONLY|O_APPEND);
+    size = write(fd, message, strlen(message));
     close(fd);
 }
