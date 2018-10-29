@@ -1,7 +1,7 @@
 Exercice 1
 
-	I. Fichiers: bonjour, bonjour.o, bonjour.c
-	II. Bibliothèques: stdio.h, math.h
+	I. Fichiers: operators2.c, operators.h
+	II. Bibliothèques: stdio.h
 	III. Références: 
 	IV. Difficulté: facile
 	V. Commentaires (optionnels):
@@ -9,40 +9,40 @@ Exercice 1
 
 Exercice 2
 
-	I. Fichiers: circle, circle.o, circle.c
-	II. Bibliothèques: stdio.h, math.h
-	III. Références: 
+	I. Fichiers: fichier.c, fichier.h
+	II. Bibliothèques: stdio.h, fcntl.h, stdlib.h, string.h, unistd.h
+	III. Références: cours
 	IV. Difficulté: facile
 	V. Commentaires (optionnels):
 
 Exercice 3
 
-	I. Fichiers: sizeof_types, sizeof_types.o, sizeof_types.c
-	II. Bibliothèques: stdio.h, math.h
-	III. Références: stackoverflow.com
+	I. Fichiers: calcule.c, operators.h
+	II. Bibliothèques: stdio.h, fcntl.h, stdlib.h, string.h, unistd.h
+	III. Références: cours
 	IV. Difficulté: facile
 	V. Commentaires (optionnels):
 
 Exercice 4
 
-	I. Fichiers: variables, variables.o, variables.c
-	II. Bibliothèques: stdio.h, math.h
-	III. Références: stackoverflow.com
-	IV. Difficulté: facile
-	V. Commentaires (optionnels):
+	I. Fichiers: etudiant_db.c, etudiant_db.h
+	II. Bibliothèques: stdio.h, fcntl.h, stdlib.h, string.h, unistd.h
+	III. Références: stackoverflow.com, cours
+	IV. Difficulté: moyenne
+	V. Commentaires (optionnels): difficulté pour concatener les éléments de la structure 
 
 Exercice 5
 
-	I. Fichiers: operators, operators.o, operators.c
-	II. Bibliothèques: stdio.h, math.h
-	III. Références: stackoverflow.com
-	IV. Difficulté: moyenne
-	V. Commentaires (optionnels):
+	I. Fichiers: couleur_compteur.c, couleur_compteur.h
+	II. Bibliothèques: stdio.h, fcntl.h, stdlib.h, string.h, unistd.h
+	III. Références: stackoverflow.com, cours
+	IV. Difficulté: difficle
+	V. Commentaires (optionnels): je n'ai pas réussi à faire cet exercice en entier car je n'ai pas compris comment faire une structure de nombre d'éléments indéterminés. 
 
 Exercice 6
 
-	I. Fichiers: boucles, boucles.o, boucles.c
-	II. Bibliothèques: stdio.h, math.h
-	III. Références: stackoverflow.com
-	IV. Difficulté: moyenne
-	V. Commentaires (optionnels):
+	I. Fichiers: N/A
+	II. Bibliothèques: N/A
+	III. Références: N/A
+	IV. Difficulté: difficile
+	V. Commentaires (optionnels): je n'ai pas eu le temps de le faire car je n'ai pas fini l'exercice 5.
