@@ -12,7 +12,7 @@ int main(int argc, char **argv){
     struct Etudiants etu[5];
     
     int i;
-    for (i=0; i<2; i++){
+    for (i=0; i<5; i++){
         printf("entrez le nom de l'étudiant\n");
         fgets(etu[i].nom, 30, stdin);
         
