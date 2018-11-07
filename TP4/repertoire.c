@@ -39,3 +39,28 @@ void lire_dossier_recursif(char* dossier){
     }
     closedir(chemin);
 }
+
+void lire_dossier_iteratif(char* dossier){
+    DIR* chemin = opendir(dossier);
+    struct dirent *entite;
+    
+    struct Dossier *level{ //liste chainée
+        char nom;
+        struct Dossier *next;
+    };
+    struct Dossier *cptr; //pointeur pour la liste chainée
+    
+    while(1){
+        entite = readdir(chemin);        
+        if (entite == NULL){
+            break;
+        }
+        else if(entite->d_type == DT_DIR){
+            if(strcmp(entite->d_name, ".") != 0 && strcmp(entite->d_name, "..") != 0){
+                level = malloc(sizeof(struct Dossier));
+                level->nom = entite->d_name; //si le dossier n'est pas "." ou "..", level.nom devient le nom du sous-dossier.
+                
+            }
+        } 
+    }
+}
