@@ -44,23 +44,38 @@ void lire_dossier_iteratif(char* dossier){
     DIR* chemin = opendir(dossier);
     struct dirent *entite;
     
-    struct Dossier *level{ //liste chainée
+    struct Dossier{ //liste chainée
         char nom;
         struct Dossier *next;
     };
+    struct Dossier first;
     struct Dossier *cptr; //pointeur pour la liste chainée
+    struct Dossier *new;
     
-    while(1){
-        entite = readdir(chemin);        
-        if (entite == NULL){
-            break;
-        }
-        else if(entite->d_type == DT_DIR){
-            if(strcmp(entite->d_name, ".") != 0 && strcmp(entite->d_name, "..") != 0){
-                level = malloc(sizeof(struct Dossier));
-                level->nom = entite->d_name; //si le dossier n'est pas "." ou "..", level.nom devient le nom du sous-dossier.
-                
+    if(first->nom == NULL){
+        first->nom = dossier; //le premier element de la liste chainée est le dossier parent
+        first->next = NULL; //le pointeur pointe vers la fin de la liste chainée
+        
+        while(1){
+            entite = readdir(chemin);        
+            if (entite == NULL){
+                break;
             }
-        } 
+            else if(entite->d_type == DT_DIR){
+                if(strcmp(entite->d_name, ".") != 0 && strcmp(entite->d_name, "..") != 0){
+                    new = malloc(sizeof(struct Dossier));
+                    
+                    char* new_dossier = malloc(strlen(dossier)+strlen(entite->d_name)+2);//allocation  de place en mémoire
+                    memset(new_dossier,0,strlen(dossier)+strlen(entite->d_name)+2);
+                    strcat(new_dossier, dossier);
+                    strcat(new_dossier,"/");
+                    strcat(new_dossier, entite->d_name);
+                    new->nom = new_dossier; //si le dossier n'est pas "." ou "..", new.nom devient le nom du sous-dossier.
+                    
+                    new->next = first->next;
+                    first->next = new;
+                }
+            } 
+        }
     }
 }
