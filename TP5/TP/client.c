@@ -7,6 +7,7 @@
 #include <netinet/in.h>
 
 #include "client.h"
+#include "repertoire.h"
 
 /* envoi et reception de message
  */

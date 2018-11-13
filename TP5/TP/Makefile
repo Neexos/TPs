@@ -1,21 +1,13 @@
-CC ?= gcc
+CFLAGS=-Wall -Wextra
+all: client serveur
+client: client.o repertoire.o
+	$(CC) $^ -o $@
 
-COBJS ?= client.o
-SOBJS ?= serveur.o 
+repertoire.o: repertoire.h repertoire.c
+client.o: client.h client.c
 
-.SUFFIXES: .c .o
+serveur: serveur.o repertoire.o
+	$(CC) $^ -o $@
 
-SERVER = serveur
-CLIENT = client
-
-all: $(SERVER) $(CLIENT)
-
-$(SERVER): $(SOBJS)
-	$(CC) -o $(SERVER) $(SOBJS)
-
-$(CLIENT): $(COBJS)
-	$(CC) -o $(CLIENT) $(COBJS)
-
-.c.o: 
-	$(CC) -c $*.c
-
+repertoire.o: repertoire.h repertoire.c
+serveur.o: serveur.h serveur.c

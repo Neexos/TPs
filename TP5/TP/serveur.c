@@ -2,8 +2,6 @@
  * Communication client-serveur
  * Auteurs: John Samuel, ...
  */
-
-
 #include <sys/types.h> 
 #include <sys/socket.h>
 #include <sys/epoll.h>
@@ -15,6 +13,7 @@
 
 #include "serveur.h"
 #include "operators.h"
+#include "repertoire.h"
 
 /* renvoyer un message (*data) au client (client_socket_fd)
  */
@@ -69,10 +68,8 @@ int recois_envoie_message(int socketfd) {
     strcat(data, message);
     renvoie_message(client_socket_fd, data);
   }
+  //Si le message commence par le mot: 'calcule:'
   else if (strcmp(code,"calcule:") == 0){
-        /*char data[1024];
-        memset(data, 0, sizeof(data));
-        char message[100];*/
         char code[10];
         char op[2];
         float num1,num2;
@@ -114,7 +111,7 @@ int recois_envoie_message(int socketfd) {
                 
             default:
                 memset(data, 0, sizeof(data));               
-                strcpy(data, "veuillez entrer un operateur valide");
+                strcpy(data, "veuillez utiliser la synthaxe: calcule: [operateur] [num1] [num2]\n");
                 renvoie_message(client_socket_fd, data);
                 break;
         }
@@ -127,37 +124,6 @@ int recois_envoie_message(int socketfd) {
 
   //fermer le socket 
   close(socketfd);
-}
-
-/***************************FONCTION CALCULE***************************************/
-
-int recois_numero_calcule(int socketfd) {
-    struct sockaddr_in client_addr;
-    char data[1024];
-    
-    //connection du client
-    int client_addr_len = sizeof(client_addr);
-    int client_socket_fd = accept(socketfd, (struct sockaddr *) &client_addr, &client_addr_len);
-    if (client_socket_fd < 0 ) {
-        perror("accept");
-        return(EXIT_FAILURE);
-    }
-    
-    memset(data, 0, sizeof(data));
-    
-    //lecture de données du client
-    int data_size = read (client_socket_fd, (void*) data, sizeof(data));
-    
-    if (data_size < 0){
-        perror("erreur de lecture");
-        return(EXIT_FAILURE);
-    }
-    
-    printf("Message recu:%s\n", data);
-    
-    
-    
-    
 }
 
 
