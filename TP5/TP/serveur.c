@@ -19,11 +19,11 @@
  */
 int renvoie_message(int client_socket_fd, char *data) {
   int data_size = write (client_socket_fd, (void *) data, strlen(data));
-      
   if (data_size < 0) {
     perror("erreur ecriture");
     return(EXIT_FAILURE);
   }
+  return 0;
 }
 
 /* accepter la nouvelle connection d'un client et lire les données
@@ -34,7 +34,7 @@ int recois_envoie_message(int socketfd) {
   struct sockaddr_in client_addr;
   char data[1024];
 
-  int client_addr_len = sizeof(client_addr);
+  unsigned int client_addr_len = sizeof(client_addr);
  
   // nouvelle connection de client
   int client_socket_fd = accept(socketfd, (struct sockaddr *) &client_addr, &client_addr_len);
@@ -121,19 +121,46 @@ int recois_envoie_message(int socketfd) {
         strcat(data, buff);
         renvoie_message(client_socket_fd, data);
     }
-
+    else if(strcmp(code, "moyenne:") == 0){
+        char buff[100];
+        
+        struct maillon{
+            unsigned char num_etud;
+            int note_1;
+            int note_2;
+            int note_3;
+            int note_4;
+            int note_5;
+            struct maillon* next;
+        };
+        
+        struct maillon* element(int val_etud, int val1, int val2, int val3, int val4, int val5, struct maillon* cptr){
+            struct maillon* new = malloc(sizeof(struct maillon));
+            new->num_etud = val_etud;
+            new->note_1 = val1;
+            new->note_2 = val2;
+            new->note_3 = val3;
+            new->note_4 = val4;
+            new->note_5 = val5;
+            new->next = cptr;
+            return new;
+        }
+        
+        struct maillon* first = NULL;
+        
+        first = element(lire_dossier_recursif("etudiant"));
+        
+    }
+  return 0;
   //fermer le socket 
   close(socketfd);
 }
-
 
 int main() {
 
   int socketfd;
   int bind_status;
-  int client_addr_len;
-
-  struct sockaddr_in server_addr, client_addr;
+  struct sockaddr_in server_addr;
 
   /*
    * Creation d'un socket

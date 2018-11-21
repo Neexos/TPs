@@ -17,7 +17,7 @@ void lire_dossier(char* dossier){
     closedir(chemin);
 }
 
-void lire_dossier_recursif(char* dossier){
+char lire_dossier_recursif(char* dossier){
     DIR* chemin = opendir(dossier);
     struct dirent *entite;
     while(1){
@@ -35,7 +35,9 @@ void lire_dossier_recursif(char* dossier){
             lire_dossier_recursif(new_dossier);
             }
         }
-        printf("%s\n", entite->d_name);
+        char folder[256] = entite->d_name;
+        printf("%s\n", folder);
+        return folder;
     }
     closedir(chemin);
 }

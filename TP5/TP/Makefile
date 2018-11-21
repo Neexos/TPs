@@ -1,5 +1,5 @@
 CFLAGS=-Wall -Wextra
-all: client serveur
+all: client serveur 
 client: client.o repertoire.o
 	$(CC) $^ -o $@
 

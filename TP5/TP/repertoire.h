@@ -5,7 +5,7 @@ void lire_dossier(char* dossier);
 
 #ifndef LIRE_DOSSIER_RECURSIF_H
 #define LIRE_DOSSIER_RECURSIF_H
-void lire_dossier_recursif(char* dossier);
+char lire_dossier_recursif(char* dossier);
 #endif
 
 #ifndef LIRE_DOSSIER_ITERATIF_H

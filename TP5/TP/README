@@ -1,0 +1,25 @@
+Exercice 1
+
+	I. Fichiers: client.h, client.c, serveur.h, serveur.c, Makefile
+	II. Bibliothèques: stdio.h, stdlib.h, string.h, dirent.h, sys/types.h
+	III. Références: cours
+	IV. Difficulté: facile
+	V. Commentaires (optionnels):
+
+Exercice 2
+
+	I. Fichiers: client.h, client.c, serveur.h, serveur.c, Makefile
+	II. Bibliothèques: stdio.h, stdlib.h, string.h, dirent.h, sys/types.h
+	III. Références: cours
+	IV. Difficulté: moyenne
+	V. Commentaires (optionnels): 
+
+Exercice 3
+
+	I. Fichiers: client.h, client.c, serveur.h, serveur.c, Makefile, repertoire.c, repertoire.h
+	II. Bibliothèques: stdio.h, stdlib.h, string.h, dirent.h, sys/types.h
+	III. Références: stackoverflow.com, cours
+	IV. Difficulté: difficile
+	V. Commentaires (optionnels): je n'ai pas reussi à finir l'exercie, compris sur le principe mais pas réussi à mettre en oeuvre.
+
+

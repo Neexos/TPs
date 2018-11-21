@@ -15,7 +15,7 @@ int envoie_recois_message(int socketfd) {
   char data[1024];
   memset(data, 0, sizeof(data));
   //char message[100];
-  printf("Votre message (max 100 caracteres): ");
+  printf("Tapez 'message:' ou 'calcule:' selon l'operation souhaitée\nVotre message (max 100 caracteres): ");
   fgets(data, 1024, stdin);
   
   int write_status = write(socketfd, data, strlen(data));
@@ -38,9 +38,8 @@ int envoie_recois_message(int socketfd) {
 
 int main() {
   int socketfd;
-  int bind_status;
 
-  struct sockaddr_in server_addr, client_addr;
+  struct sockaddr_in server_addr;
 
   /*
    * Creation d'un socket
