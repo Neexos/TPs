@@ -1,0 +1,25 @@
+Exercice 1
+
+	I. Fichiers: pile.c, pile.h
+	II. Bibliothèques: stdio.h, stdlib.h, string.h, pile.h
+	III. Références: cours, prof
+	IV. Difficulté: moyenne
+	V. Commentaires (optionnels): des difficultés à réaliser la liste chaînée à cause des points de vue différents des professeurs mais exercice compris.
+
+Exercice 2
+
+	I. Fichiers: file.c, file.h
+	II. Bibliothèques: stdio.h, stdlib.h, string.h, file.h
+	III. Références: cours, stackoverflow.com
+	IV. Difficulté: moyenne
+	V. Commentaires (optionnels): je n'ai pas réussi à mettre en oeuvre la liste doublement chaînée.
+
+Exercice 3
+
+	I. Fichiers: client.h, client.c, serveur.h, serveur.c, Makefile, bmp.c, bmp.h, couleur.c, couleur.h
+	II. Bibliothèques: stdint.h, stdio.h, stdlib.h, string.h, dirent.h, sys/types.h, sys/stat.h, fcntl.h, unistd.h, sys/socket.h, netinet/in.h, sys/epoll.h, search.h, 
+	III. Références:
+	IV. Difficulté: moyenne
+	V. Commentaires (optionnels): petit problème pour découper le cercle en parts égales (utilisation de la conversion en float)
+
+
