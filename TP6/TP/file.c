@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "file.h"
@@ -23,7 +22,7 @@ void enfiler(int valeur, struct File* queue){
     
     if(queue->first != NULL){  //si queue n'est pas vide
         struct maillon_double* current = queue->first; //on se positionne sur le 1er
-        while(current->next != NULL){ //tant qu'on ne pointe pas vers NULL on remponte dans la file
+        while(current->next != NULL){ //tant qu'on ne pointe pas vers NULL on remonte dans la file
             current = current->next;
         }
         current->next = new;
